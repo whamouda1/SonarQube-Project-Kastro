@@ -12,10 +12,13 @@ spec:
   template:
     metadata:
       labels:
-        app:spotify-app
+        app: spotify-app
     spec:
       containers:
-      - name: spotify-app-container
-        image: whamouda1/spotify-app:latest  # Replace with your Docker image
+      - name: spotify-app
+        image: whamouda1/spotify-app:latest
         ports:
-        - containerPort: 3000  # Replace with the port your app runs on
+        - containerPort: 8080  # Adjust this port based on your application
+        env:
+        - name: ENV_VAR_NAME  # Replace with actual environment variables needed for your app
+          value: "value"
